@@ -1,7 +1,7 @@
 import os
 from os.path import join as pjoin
 import pathlib
-from setuptools import Extension, setup
+from setuptools import find_packages, Extension, setup
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
@@ -98,8 +98,8 @@ CUDA = locate_cuda()
 
 ext = Extension(
     "pixelpie",
-    sources=["pixelpie/pixelpie.pyx", "pixelpie/run_exp.cpp", "pixelpie/lodepng.cpp",
-             "pixelpie/PoissonDiskSampler.cpp", "pixelpie/cudaThrustOGL.cu"],
+    sources=["src/pixelpie.pyx", "src/run_exp.cpp", "src/lodepng.cpp",
+             "src/PoissonDiskSampler.cpp", "src/cudaThrustOGL.cu"],
     libraries=['GL', 'GLEW', 'glfw', 'cudart'],
     language="c++",
     extra_compile_args={
@@ -125,7 +125,6 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
     ],
-    packages=["pixelpie"],
     include_package_data=True,
     install_requires=["numpy"],
     ext_modules=cythonize(
