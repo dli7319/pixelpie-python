@@ -23,6 +23,6 @@ pixelpie.run(4096, 4096, 10/4096) # Returns a numpy array of shape (112090, 2)
 result = np.asarray(poisson_disc_samples(width=4096, height=4096, r=10))
 result = pixelpie.run(width=4096, height=4096, r=10/4096)
 
-#bridson returns (84881, 2) tensor in 1.6675410270690918 seconds
-#pixelpie returns (112090, 2) tensor in 0.25662803649902344 seconds
+#bridson returns (84881, 2) array in 1.6675410270690918 seconds
+#pixelpie returns (112090, 2) array in 0.25662803649902344 seconds
 ```
