@@ -1,12 +1,12 @@
 # pixelpie-python
 
 A GPU-accelerated poisson-disk sampling algorithm.  
-This is a cython wrapper around https://github.com/salivian/pixelpie.
+This is a cython wrapper around https://github.com/salivian/pixelpie which has been modified to use EGL.
 
 
 ## Installation
 
-* Make sure opengl, glfw, and cuda things are installed.
+* Make sure opengl, and cuda are installed.
 * Run `pip install "git+https://github.com/dli7319/pixelpie-python"`
 
 ## Usage

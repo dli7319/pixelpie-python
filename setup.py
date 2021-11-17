@@ -100,7 +100,7 @@ ext = Extension(
     "pixelpie",
     sources=["src/pixelpie.pyx", "src/run_exp.cpp", "src/lodepng.cpp",
              "src/PoissonDiskSampler.cpp", "src/cudaThrustOGL.cu"],
-    libraries=['GL', 'GLEW', 'glfw', 'cudart'],
+    libraries=['EGL', 'GL', 'GLEW', 'cudart'],
     language="c++",
     extra_compile_args={
         'gcc': ['-g', '-O2'],
