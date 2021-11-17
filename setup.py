@@ -99,14 +99,14 @@ CUDA = locate_cuda()
 ext = Extension(
     "pixelpie",
     sources=["src/pixelpie.pyx", "src/run_exp.cpp", "src/lodepng.cpp",
-             "src/PoissonDiskSampler.cpp", "src/cudaThrustOGL.cu"],
-    libraries=['EGL', 'GL', 'GLEW', 'cudart'],
+             "src/PoissonDiskSampler.cpp", "src/cudaThrustOGL.cu", "src/glew.c"],
+    libraries=['EGL', 'GL', 'cudart'],
     language="c++",
     extra_compile_args={
         'gcc': ['-g', '-O2'],
         'nvcc': ['-g', '-O2', '--compiler-options', "'-fPIC'"]
     },
-    include_dirs=['.', CUDA['include']]
+    include_dirs=['.', './include', CUDA['include']]
 )
 
 HERE = pathlib.Path(__file__).parent
